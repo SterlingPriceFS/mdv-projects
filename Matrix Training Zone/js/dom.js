@@ -11,9 +11,7 @@
 
 console.log("Hello World!");
 
-window.onload = addLi();
-
-function addLi() {
+var addLi = function () {
 	var getUl = document.getElementById("numList");
 	var newLi = document.createElement("li");
 	var newLiText = document.createTextNode("Seven");
@@ -21,3 +19,5 @@ function addLi() {
 	newLi.appendChild(newLiText);
 	getUl.appendChild(newLi);
 };
+
+window.onload = addLi();
