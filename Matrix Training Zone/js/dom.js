@@ -11,8 +11,9 @@
 
 console.log("Hello World!");
 
-window.onload = addLi();
+window.onload = removeThree();
 
+/*
 function addLi() {
 	var getUl = document.getElementById("numList");
 	var newLi = document.createElement("li");
@@ -21,3 +22,33 @@ function addLi() {
 	newLi.appendChild(newLiText);
 	getUl.appendChild(newLi);
 };
+
+function getTwo() {
+	var getUl = document.getElementById("numList");
+	var getLi = getUl.getElementsByTagName("li");
+	var newLi = document.createElement("li");
+	var newLiText = document.createTextNode("Two and Half");
+	var getTwo = getLi[1];
+	
+	newLi.appendChild(newLiText);
+	getUl.replaceChild(newLi,getTwo);
+}
+*/
+
+function removeThree() {
+	var getUl = document.getElementById("numList");
+	var getTag = getUl.getElementsByTagName("li");
+	
+	if (getTag.length > 1) {
+		var deleteLi = getTag.item(getTag.length-2);
+		getUl.removeChild(deleteLi);
+	} else {
+		alert("nothing to remove??");
+	}
+	
+/*
+	var getThree = getTag[2];
+	
+	getUl.removeChild(getThree);
+*/
+}
