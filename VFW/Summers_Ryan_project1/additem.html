@@ -12,14 +12,14 @@
 		<meta name ="robots" content = "index, follow" />
 		<!-- allows browser to be scalable for iPhone -->
 		<meta name ="viewport" content = "user-scalable=no, width=device-width" />
-    	<title>Your Life: Add a Quest!</title>
+    	<title>Your Life: The RPG! Add a Quest!</title>
     </head>
     <body>
 	    <!-- H1 requirement here, needs a CSS tag -->
 	    <h1>Add a Quest</h1>
 	    <form action="#" method="post">
 	    	<fieldset>
-	    		<!-- Section devoted just to the Quest data on its own -->
+	    		<!-- Section devoted just to the task meta data on its own -->
 	    		<legend>The Quest</legend>
 		    		<ul>
 		    			<li><label for="name">Title:</label><input type:"text" id:"name" placeholder="task name" required aria-required="true" /></li>
@@ -37,15 +37,46 @@
 		    					</li>
  		    					<li><input type="radio" checked value="No" id="no" name="duetime" /><label for="no">No</label></li>
 		    				</ul>
-		    			<li><label for="importance">Quest Importance: 
+		    			<li><label for="importance">
+		    				Quest Importance: 
 		    				<br><small>Scale of 1 to 10 </small></label>
 		    				<br><input type="range" min="1" max="10" name="importance" type="range">
 		    			</li>
 		    		</ul>
-		    	<legend>The Reward</legend>
 	    	</fieldset>
+	    	<fieldset>
+	    		<!-- section dedicated to the RPG aspect of the game, needs to be set to defaults so it can be ignored -->
+	    		<legend>The Reward</legend>
+	    			<ul>
+	    				<li>
+	    					<label for="skill">Category:</label>
+	    					<select id="skill">
+	    						<optgroup label="Skill Used">
+	    							<!-- use javascript so that if form is left on ignore, randomly generate one of the three tasks -->
+	    							<option value="ignore" />
+	    							<!-- Opportunity to expand more categories, also to break into subcategories. Would also consider nested optgroup 
+	    							that autopopulates using JS to fill in previous tasks that had been assigned that category -->
+	    							<option value="Strength">Strength - Your power is called into question</small></option>
+	    							<option value="Intelligence">Intelligence - Your wits are called into question</small></option>
+	    							<option value="Endurance">Endurance - Your body is called into question</small></option>
+	    						</optgroup>
+	    					</select>
+						<li><label for="reward">Bounty:</label><input type="text" id:"reward" name="reward" placeholder="fruits of your labor"/></li>
+						<li>
+							<!-- Will ultimately used as modifier when impacting attributes, ultimately may be used to determine whether task
+							will have side benefits to other attributes as well if difficulty is above a certain threshold -->
+							<label for="difficulty">
+								Difficulty:
+								<br><small>Scale of 1 to 10</small>	
+							</label>
+							<input type="range" min="1" max="10" name="difficulty" type="range">
+						</li>
+						<!-- Could use better placeholder in this line -->
+						<li><label for="notes">Quest Notes:</label>
+						<br><textarea id="notes" maxlength="140" rows="4" cols="40" placeholder="max 140 chars"></textarea></li>
+			</fieldset>
+			<input type="submit" value="Enter Quest Into Log" /><input type="reset" value="Rip Out This Page In Log" />
 	    </form>
-	    <!-- Form requirements go here -->
 		<footer>
 			<p><a href="#">Empty your Quest Log</a></p>
 			<p><a href="#">Review your Quest Log</a></p>
