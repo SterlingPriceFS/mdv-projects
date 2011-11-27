@@ -19,12 +19,30 @@
 	    <h1>Add a Quest</h1>
 	    <form action="#" method="post">
 	    	<fieldset>
+	    		<!-- Section devoted just to the Quest data on its own -->
 	    		<legend>The Quest</legend>
 		    		<ul>
-		    			<li><label for="qname">Quest Title:</label><input type:"text" id:"qname"  required aria-required="true"/></li>
-		    			<li><label for="description">Description:</label><input type:"text" id:"description" /></li>
-		    			
+		    			<li><label for="name">Title:</label><input type:"text" id:"name" placeholder="task name" required aria-required="true" /></li>
+		    			<li><label for="description">Description:</label><input type:"text" id:"description"  placeholder="what you will do" /></li>
+		    			<li><label for="duedate">Deadline:</label><input type:"date" id:"duedate" placeholder="yyyy-mm-dd" /></li>
+		    			<!-- Specific Time will break into nested lists -->
+		    			<li>Specific Time:
+		    				<ul>
+		    					<li><input type="radio" value="Yes" id="yes" name="duetime" /><label for="yes">Yes</label>
+		    						<!-- Will use JS to hide this section unless the Yes button is actively checked -->
+		    						<ul>
+		    							<!-- Allows for entering a specific due time during the date, only if requested by user -->
+		    							<li><label for="time">Time:</label><input type="time" name="time" /></li>
+		    						</ul>
+		    					</li>
+ 		    					<li><input type="radio" checked value="No" id="no" name="duetime" /><label for="no">No</label></li>
+		    				</ul>
+		    			<li><label for="importance">Quest Importance: 
+		    				<br><small>Scale of 1 to 10 </small></label>
+		    				<br><input type="range" min="1" max="10" name="importance" type="range">
+		    			</li>
 		    		</ul>
+		    	<legend>The Reward</legend>
 	    	</fieldset>
 	    </form>
 	    <!-- Form requirements go here -->
