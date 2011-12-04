@@ -3,7 +3,7 @@
 
 
 window.addEventListener("DOMContentLoaded", function(){
-		
+	alert(localStorage.value(0))
 	//getElementByID function
 	function $(x){
 		var theElement = document.getElementById(x);
@@ -26,30 +26,46 @@ window.addEventListener("DOMContentLoaded", function(){
 		selectLi.appendChild(makeSelect);
 	};
 
-//declare items for dynamically added list
-var skillSet = [ "Random", "Strength", "Intelligence", "Endurance" ];	
 
 
+	function getSelectedRadio(){
+		var radio = document.forms[0].duetime; //grabs all elements with name due time in radial form
+		for(var i=0; i<radio.length; i++){
+			if(radio[i].checked) { 
+			dueTime = radio[i].value;
+			}
+		}
+	}
+
+	
 	function saveData() {
+		//generates random number
 		var id	= Math.floor(Math.random()*100001);
 		//gather up all our form field values and store in an object.
 		//object properties contain array with label AND user input value
+		getSelectedRadio();
 		var quest = {};
 			quest.name = ["Title", $("task").value];							//creates an array inside the object for each field on our form
 			quest.description = ["Description", $("description").value];		//ultimately this object will hold arrays, each array will have
 			quest.dueDate = ["Due Date", $("duedate").value];					//a label for the form field, and the user input of the data
-/* 			quest.dueTime = ["Specific Time", specificValue]; */
+			quest.dueTime = ["Specific Time", dueTime];
 			quest.time = ["Time", $("time").value];
 			quest.importance = ["Importance", $("importance").value];
 			quest.skill = ["Skill Used", $("skill").value];
 			quest.reward = ["Reward", $("reward").value];
 			quest.difficulty = ["Difficulty", $("difficulty").value];
 			quest.notes = ["Notes", $("notes").value];
+		//saves data into local storage
 		localStorage.setItem(id, JSON.stringify(quest));
-		alert("Quest has been logged!");
-}
+		console.log("Successfully Ran function");
+};
 
-makeSkillSet();
+	//variable defaults
+	//declare items for dynamically added list
+	var skillSet = [ "Random", "Strength", "Intelligence", "Endurance" ],
+		dueTime
+	;
+	makeSkillSet();
 	
 	//Set Link& Submit CLick Events
 /*
