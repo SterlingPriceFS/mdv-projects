@@ -1,6 +1,7 @@
 body {
 	background-color: #FFC073;
 	font-family: Arial;
+	margin: 25px;
 }
 /*
 previously created hgroup so I could assign generic heading styles to both
@@ -19,9 +20,63 @@ h1 {
 	border-style: inset;
 	border-width: 5px;
 	border-color: #3D9AD1;
-	margin: 25px;
 }
 
+span {
+	color: #FF0700;
+}
+
+fieldset {
+	color: #008209;
+}
+/* Not the best image to use, but I'll edit it out to make it transparent before next project, may animate it on hover as well,
+mostly just wanted to edit the li part of the list */
+ul{
+	margin-top: 3px;	
+	list-style-image: url('images/scroll.jpg');
+}
+li{ }
+
 p {
-	margin: 25px;
+	color: #26972D;
+	padding: 10px;
+	line-height: 15px;
+	border-style: dashed;
+	border-radius: 10px;
+	border-color: #BF3330;
+	border-width: 1px;
+	margin: 10px;
+	text-align: center;
+}
+
+small {
+	font-style: italic;
+}
+
+section {
+	border-style: inset;
+	border-width: 5px;
+	border-color: #3D9AD1;
+}
+
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:underline;}
+
+a {
+	margin: 5px;
+}
+
+input[type="reset"] {
+	margin: 5px;
+}
+
+input[type="submit"] {
+	margin: 5px;
+}
+
+footer {
+	margin: 10px;
+	text-align: center;
 }

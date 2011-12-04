@@ -50,7 +50,7 @@
 	    	<fieldset>
 	    		<!-- section dedicated to the RPG aspect of the game, needs to be set to defaults so it can be ignored -->
 	    		<legend>The Reward</legend>
-	    			<ul>
+	    		<ul>
 	    				<li>
 	    					<label for="skill">Category:</label>
 	    					<select id="skill">
@@ -72,17 +72,19 @@
 								Difficulty:
 								<br><small>Scale of 1 to 10</small>	
 							</label>
+							<br>
 							<input type="range" min="1" max="10" name="difficulty" type="range">
 						</li>
 						<!-- Could use better placeholder in this line -->
 						<li><label for="notes">Quest Notes:</label>
+						<!-- Limit character input to 140 for eventual text message usage -->
 						<br><textarea id="notes" maxlength="140" rows="4" cols="40" placeholder="max 140 chars"></textarea></li>
 			</fieldset>
-			<input type="submit" value="Enter Quest Into Log" /><input type="reset" value="Rip Out This Page In Log" />
+			<footer><input type="submit" value="Enter Quest Into Log" /><input type="reset" value="Rip Out This Page In Log" /></footer>
 	    </form>
 		<footer>
-			<p><a href="#">Empty your Quest Log</a></p>
-			<p><a href="#">Review your Quest Log</a></p>
+			<a href="#">Empty your Quest Log</a>
+			<a href="#">Review your Quest Log</a>
 		</footer>
     </body>
 </html>
