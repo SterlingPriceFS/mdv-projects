@@ -21,36 +21,36 @@
 		    <h1>Add a Quest</h1>
 		    <form action="#" method="post">
 		</hgroup>
-		    	<fieldset>
-		    		<!-- Section devoted just to the task meta data on its own -->
-		    		<legend>The Quest</legend>
-		    		<ul>
-		    			<li><label for="name">Title:</label><input type:"text" id:"name" placeholder="task name" required aria-required="true" /></li>
-		    			<li><label for="description">Description:</label><input type:"text" id:"description"  placeholder="what you will do" /></li>
-		    			<li><label for="duedate">Deadline:</label><input type:"date" id:"duedate" placeholder="yyyy-mm-dd" /></li>
-		    			<!-- Specific Time will break into nested lists -->
-		    			<li>Specific Time:
-		    				<ul>
-		    					<li><input type="radio" value="Yes" id="yes" name="duetime" /><label for="yes">Yes</label>
-		    						<!-- Will use JS to hide this section unless the Yes button is actively checked -->
-		    						<ul>
-		    							<!-- Allows for entering a specific due time during the date, only if requested by user -->
-		    							<li><label for="time">Time:</label><input type="time" name="time" /></li>
-		    						</ul>
-		    					</li>
- 		    					<li><input type="radio" checked value="No" id="no" name="duetime" /><label for="no">No</label></li>
-		    				</ul>
-		    			<li><label for="importance">
-		    				Quest Importance: 
-		    				<br><small>Scale of 1 to 10 </small></label>
-		    				<br><input type="range" min="1" max="10" name="importance" type="range">
-		    			</li>
-		    		</ul>
+	    	<fieldset>
+	    		<!-- Section devoted just to the task meta data on its own -->
+	    		<legend>The Quest</legend>
+	    		<ul id="task">
+	    			<li><label for="name">Title:</label><input type:"text" id:"name" placeholder="task name" required aria-required="true" /></li>
+	    			<li><label for="description">Description:</label><input type:"text" id:"description"  placeholder="what you will do" /></li>
+	    			<li><label for="duedate">Deadline:</label><input type:"date" id:"duedate" placeholder="yyyy-mm-dd" /></li>
+	    			<!-- Specific Time will break into nested lists -->
+	    			<li>Specific Time:
+	    				<ul id class="radio">
+	    					<li><input type="radio" value="Yes" id="yes" name="duetime" /><label for="yes">Yes</label>
+	    						<!-- Will use JS to hide this section unless the Yes button is actively checked -->
+	    						<ul class="time">
+	    							<!-- Allows for entering a specific due time during the date, only if requested by user -->
+	    							<li><label for="time">Time:</label><input type="time" name="time" /></li>
+	    						</ul>
+	    					</li>
+		    					<li><input type="radio" checked value="No" id="no" name="duetime" /><label for="no">No</label></li>
+	    				</ul>
+	    			<li><label for="importance">
+	    				Quest Importance: 
+	    				<br><small>Scale of 1 to 10 </small></label>
+	    				<br><input type="range" min="1" max="10" name="importance" type="range">
+	    			</li>
+	    		</ul>
 	    	</fieldset>
 	    	<fieldset>
 	    		<!-- section dedicated to the RPG aspect of the game, needs to be set to defaults so it can be ignored -->
 	    		<legend>The Reward</legend>
-	    		<ul>
+	    		<ul id="adventure">
 	    				<li>
 	    					<label for="skill">Category:</label>
 	    					<select id="skill">
@@ -61,7 +61,7 @@
 	    							that autopopulates using JS to fill in previous tasks that had been assigned that category -->
 	    							<option value="Strength">Strength - Your power is called into question</small></option>
 	    							<option value="Intelligence">Intelligence - Your wits are called into question</small></option>
-	    							<option value="Endurance">Endurance - Your body is called into question</small></option>
+	    							<option value="Endurance">Endurance - Your will is called into question</small></option>
 	    						</optgroup>
 	    					</select>
 						<li><label for="reward">Bounty:</label><input type="text" id:"reward" name="reward" placeholder="fruits of your labor"/></li>
@@ -80,11 +80,12 @@
 						<!-- Limit character input to 140 for eventual text message usage -->
 						<br><textarea id="notes" maxlength="140" rows="4" cols="40" placeholder="max 140 chars"></textarea></li>
 			</fieldset>
-			<footer><input type="submit" value="Enter Quest Into Log" /><input type="reset" value="Rip Out This Page In Log" /></footer>
+			<footer><input type="submit" value="Enter Quest Into Log" id="submit" /><input type="reset" value="Rip Out This Page In Log" id="reset"/></footer>
 	    </form>
 		<footer>
-			<a href="#">Empty your Quest Log</a>
-			<a href="#">Review your Quest Log</a>
+			<a href="#" id="clear">Empty your Quest Log</a>
+			<a href="#" id="displayLink">Review your Quest Log</a>
 		</footer>
+		<script	src="js/data.js" type="text/javascript"></script>
     </body>
 </html>
