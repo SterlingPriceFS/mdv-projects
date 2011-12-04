@@ -13,14 +13,17 @@
 		<!-- allows browser to be scalable for iPhone -->
 		<meta name ="viewport" content = "user-scalable=no, width=device-width" />
     	<title>Your Life: The RPG! Add a Quest!</title>
+    	<link href="styles.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
 	    <!-- H1 requirement here, needs a CSS tag -->
-	    <h1>Add a Quest</h1>
-	    <form action="#" method="post">
-	    	<fieldset>
-	    		<!-- Section devoted just to the task meta data on its own -->
-	    		<legend>The Quest</legend>
+	    <hgroup>
+		    <h1>Add a Quest</h1>
+		    <form action="#" method="post">
+		</hgroup>
+		    	<fieldset>
+		    		<!-- Section devoted just to the task meta data on its own -->
+		    		<legend>The Quest</legend>
 		    		<ul>
 		    			<li><label for="name">Title:</label><input type:"text" id:"name" placeholder="task name" required aria-required="true" /></li>
 		    			<li><label for="description">Description:</label><input type:"text" id:"description"  placeholder="what you will do" /></li>

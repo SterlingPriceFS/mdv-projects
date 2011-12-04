@@ -1,0 +1,27 @@
+body {
+	background-color: #FFC073;
+	font-family: Arial;
+}
+/*
+previously created hgroup so I could assign generic heading styles to both
+leaving size and margins up to individual tags
+*/
+hgroup {
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	color: #26972D;
+	text-align: center;
+}
+
+h1 {
+	font-size: 30px;
+	padding: 10px;
+	border-style: inset;
+	border-width: 5px;
+	border-color: #3D9AD1;
+	margin: 25px;
+}
+
+p {
+	margin: 25px;
+}
