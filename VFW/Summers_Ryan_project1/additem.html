@@ -35,7 +35,7 @@
 	    						<!-- Will use JS to hide this section unless the Yes button is actively checked -->
 	    						<ul class="time">
 	    							<!-- Allows for entering a specific due time during the date, only if requested by user -->
-	    							<li><label for="time">Time:</label><input type="time" name="time" /></li>
+	    							<li><label for="time">Time:</label><input type="time" id="time" /></li>
 	    						</ul>
 	    					</li>
 		    					<li><input type="radio" checked value="No" id="no" name="duetime" /><label for="no">No</label></li>
@@ -43,7 +43,7 @@
 	    			<li><label for="importance">
 	    				Quest Importance: 
 	    				<br><small>Scale of 1 to 10 </small></label>
-	    				<br><input type="range" min="1" max="10" name="importance" type="range">
+	    				<br><input type="range" min="1" max="10" id="importance" type="range">
 	    			</li>
 	    		</ul>
 	    	</fieldset>
@@ -75,7 +75,7 @@
 								<br><small>Scale of 1 to 10</small>	
 							</label>
 							<br>
-							<input type="range" min="1" max="10" name="difficulty" type="range">
+							<input type="range" min="1" max="10" id="difficulty" type="range">
 						</li>
 						<!-- Could use better placeholder in this line -->
 						<li><label for="notes">Quest Notes:</label>

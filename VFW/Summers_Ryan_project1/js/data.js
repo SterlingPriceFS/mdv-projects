@@ -3,7 +3,6 @@
 
 
 window.addEventListener("DOMContentLoaded", function(){
-	alert(localStorage.value(0))
 	//getElementByID function
 	function $(x){
 		var theElement = document.getElementById(x);
@@ -32,7 +31,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		var radio = document.forms[0].duetime; //grabs all elements with name due time in radial form
 		for(var i=0; i<radio.length; i++){
 			if(radio[i].checked) { 
-			dueTime = radio[i].value;
+				dueTime = radio[i].value;
 			}
 		}
 	}
@@ -44,27 +43,28 @@ window.addEventListener("DOMContentLoaded", function(){
 		//gather up all our form field values and store in an object.
 		//object properties contain array with label AND user input value
 		getSelectedRadio();
-		var quest = {};
-			quest.name = ["Title", $("task").value];							//creates an array inside the object for each field on our form
-			quest.description = ["Description", $("description").value];		//ultimately this object will hold arrays, each array will have
-			quest.dueDate = ["Due Date", $("duedate").value];					//a label for the form field, and the user input of the data
-			quest.dueTime = ["Specific Time", dueTime];
-			quest.time = ["Time", $("time").value];
-			quest.importance = ["Importance", $("importance").value];
-			quest.skill = ["Skill Used", $("skill").value];
-			quest.reward = ["Reward", $("reward").value];
-			quest.difficulty = ["Difficulty", $("difficulty").value];
-			quest.notes = ["Notes", $("notes").value];
+		alert("Test #1");
+		var quest 				= {};
+			quest.name 			= ["Title:", $("task").value];							//creates an array inside the object for each field on our form
+			quest.description 	= ["Description:", $("description").value];		//ultimately this object will hold arrays, each array will have
+			quest.dueDate 		= ["Due Date:", $("duedate").value];					//a label for the form field, and the user input of the data
+			quest.dueTime 		= ["Specific Time:", dueTime];
+			quest.time 			= ["Time:", $("time").value];
+			quest.importance 	= ["Importance:", $("importance").value];
+			quest.skill 		= ["Skill Used:", $("skill").value];
+			quest.reward 		= ["Reward:", $("reward").value];
+			quest.difficulty 	= ["Difficulty:", $("difficulty").value];
+			quest.notes 		= ["Notes:", $("notes").value];
+		alert("Successfully ran function!"); //right here is where code gets stuck
 		//saves data into local storage
 		localStorage.setItem(id, JSON.stringify(quest));
-		console.log("Successfully Ran function");
 };
 
 	//variable defaults
 	//declare items for dynamically added list
 	var skillSet = [ "Random", "Strength", "Intelligence", "Endurance" ],
-		dueTime
-	;
+		dueTime = "No";
+		
 	makeSkillSet();
 	
 	//Set Link& Submit CLick Events
